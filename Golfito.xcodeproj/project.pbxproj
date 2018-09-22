@@ -1,0 +1,994 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		55491E70215453B6009C15C1 /* input_TvOS.c in Sources */ = {isa = PBXBuildFile; fileRef = 55491E6F215453B6009C15C1 /* input_TvOS.c */; };
+		5568BF5421505F13009033AA /* gfx_Metal.m in Sources */ = {isa = PBXBuildFile; fileRef = 5568BF5321505F13009033AA /* gfx_Metal.m */; };
+		5568BF5521505F13009033AA /* gfx_Metal.m in Sources */ = {isa = PBXBuildFile; fileRef = 5568BF5321505F13009033AA /* gfx_Metal.m */; };
+		5568BF5621505F13009033AA /* gfx_Metal.m in Sources */ = {isa = PBXBuildFile; fileRef = 5568BF5321505F13009033AA /* gfx_Metal.m */; };
+		5568BF5821506F76009033AA /* input_MacOS.c in Sources */ = {isa = PBXBuildFile; fileRef = 5568BF5721506F76009033AA /* input_MacOS.c */; };
+		55771C4B215682D100186576 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55771C49215682BD00186576 /* MetalKit.framework */; };
+		557737A9215441BD00240D78 /* sheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 557737A8215441BD00240D78 /* sheet.png */; };
+		557737AA215441BD00240D78 /* sheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 557737A8215441BD00240D78 /* sheet.png */; };
+		557737AB215441BD00240D78 /* sheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 557737A8215441BD00240D78 /* sheet.png */; };
+		55B70004214F504F006CDB55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B70002214F504F006CDB55 /* Main.storyboard */; };
+		55B70006214F504F006CDB55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B70005214F504F006CDB55 /* Assets.xcassets */; };
+		55B70009214F504F006CDB55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B70007214F504F006CDB55 /* LaunchScreen.storyboard */; };
+		55B7001E214F5071006CDB55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B7001C214F5071006CDB55 /* Main.storyboard */; };
+		55B70020214F5072006CDB55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B7001F214F5072006CDB55 /* Assets.xcassets */; };
+		55B70038214F58EB006CDB55 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B70037214F58EB006CDB55 /* MetalKit.framework */; };
+		55B7003B214F58FF006CDB55 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B7003A214F58FF006CDB55 /* MetalKit.framework */; };
+		55B70048214F5CFE006CDB55 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B70043214F5CFE006CDB55 /* ViewController.m */; };
+		55B70049214F5CFE006CDB55 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B70043214F5CFE006CDB55 /* ViewController.m */; };
+		55B7004A214F5CFE006CDB55 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B70043214F5CFE006CDB55 /* ViewController.m */; };
+		55B7004B214F5CFE006CDB55 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B70045214F5CFE006CDB55 /* main.m */; };
+		55B7004C214F5CFE006CDB55 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B70045214F5CFE006CDB55 /* main.m */; };
+		55B7004D214F5CFE006CDB55 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B70045214F5CFE006CDB55 /* main.m */; };
+		55B7004E214F5CFE006CDB55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B70046214F5CFE006CDB55 /* AppDelegate.m */; };
+		55B7004F214F5CFE006CDB55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B70046214F5CFE006CDB55 /* AppDelegate.m */; };
+		55B70050214F5CFE006CDB55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B70046214F5CFE006CDB55 /* AppDelegate.m */; };
+		55B70053214F5D38006CDB55 /* BaseShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 55B70052214F5D38006CDB55 /* BaseShader.metal */; };
+		55B70054214F5D38006CDB55 /* BaseShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 55B70052214F5D38006CDB55 /* BaseShader.metal */; };
+		55B70055214F5D38006CDB55 /* BaseShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 55B70052214F5D38006CDB55 /* BaseShader.metal */; };
+		55B7005A214FD9C7006CDB55 /* input.h in Sources */ = {isa = PBXBuildFile; fileRef = 55B70059214FD9C7006CDB55 /* input.h */; };
+		55B7005B214FD9C7006CDB55 /* input.h in Sources */ = {isa = PBXBuildFile; fileRef = 55B70059214FD9C7006CDB55 /* input.h */; };
+		55B7005C214FD9C7006CDB55 /* input.h in Sources */ = {isa = PBXBuildFile; fileRef = 55B70059214FD9C7006CDB55 /* input.h */; };
+		55B7005F214FD9F5006CDB55 /* input_iOS.c in Sources */ = {isa = PBXBuildFile; fileRef = 55B7005D214FD9F5006CDB55 /* input_iOS.c */; };
+		55B70060214FD9F5006CDB55 /* input_iOS.c in Sources */ = {isa = PBXBuildFile; fileRef = 55B7005D214FD9F5006CDB55 /* input_iOS.c */; };
+		55B7FFEB214F5017006CDB55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B7FFEA214F5017006CDB55 /* Assets.xcassets */; };
+		55B7FFEE214F5017006CDB55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B7FFEC214F5017006CDB55 /* Main.storyboard */; };
+		55BB3BF4215483B500E3E9ED /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 55BB3BF3215483B500E3E9ED /* image.png */; };
+		55BB3BF5215483B500E3E9ED /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 55BB3BF3215483B500E3E9ED /* image.png */; };
+		55BB3BF6215483B500E3E9ED /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 55BB3BF3215483B500E3E9ED /* image.png */; };
+		55C811452153096400531B28 /* boot.c in Sources */ = {isa = PBXBuildFile; fileRef = 55C811442153096400531B28 /* boot.c */; };
+		55C811462153096400531B28 /* boot.c in Sources */ = {isa = PBXBuildFile; fileRef = 55C811442153096400531B28 /* boot.c */; };
+		55C811472153096400531B28 /* boot.c in Sources */ = {isa = PBXBuildFile; fileRef = 55C811442153096400531B28 /* boot.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5526F01A21567D8B00F88049 /* assert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = assert.h; sourceTree = "<group>"; };
+		55491E6F215453B6009C15C1 /* input_TvOS.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = input_TvOS.c; sourceTree = "<group>"; };
+		5568BF5221505E64009033AA /* gfx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gfx.h; sourceTree = "<group>"; };
+		5568BF5321505F13009033AA /* gfx_Metal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = gfx_Metal.m; sourceTree = "<group>"; };
+		5568BF5721506F76009033AA /* input_MacOS.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = input_MacOS.c; sourceTree = "<group>"; };
+		55771C49215682BD00186576 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/MetalKit.framework; sourceTree = DEVELOPER_DIR; };
+		557737A8215441BD00240D78 /* sheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sheet.png; sourceTree = "<group>"; };
+		55B70003214F504F006CDB55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		55B70005214F504F006CDB55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		55B70008214F504F006CDB55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		55B7000A214F504F006CDB55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55B70014214F5071006CDB55 /* Golfito_TvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Golfito_TvOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55B7001D214F5071006CDB55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		55B7001F214F5072006CDB55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		55B70021214F5072006CDB55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55B70037214F58EB006CDB55 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS11.4.sdk/System/Library/Frameworks/MetalKit.framework; sourceTree = DEVELOPER_DIR; };
+		55B7003A214F58FF006CDB55 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		55B70042214F5CFE006CDB55 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		55B70043214F5CFE006CDB55 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		55B70044214F5CFE006CDB55 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
+		55B70045214F5CFE006CDB55 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		55B70046214F5CFE006CDB55 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		55B70047214F5CFE006CDB55 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		55B70052214F5D38006CDB55 /* BaseShader.metal */ = {isa = PBXFileReference; explicitFileType = sourcecode.metal; path = BaseShader.metal; sourceTree = "<group>"; };
+		55B70059214FD9C7006CDB55 /* input.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = input.h; sourceTree = "<group>"; };
+		55B7005D214FD9F5006CDB55 /* input_iOS.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = input_iOS.c; sourceTree = "<group>"; };
+		55B70061214FDA26006CDB55 /* types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		55B70062214FE334006CDB55 /* math.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = math.h; sourceTree = "<group>"; };
+		55B7FFDC214F4FD3006CDB55 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.4.sdk/System/Library/Frameworks/MetalKit.framework; sourceTree = DEVELOPER_DIR; };
+		55B7FFE2214F5016006CDB55 /* Golfito_MacOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Golfito_MacOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55B7FFEA214F5017006CDB55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		55B7FFED214F5017006CDB55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		55B7FFEF214F5017006CDB55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55B7FFF2214F5017006CDB55 /* Golfito_MacOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Golfito_MacOS.entitlements; sourceTree = "<group>"; };
+		55B7FFFA214F504F006CDB55 /* Golfito_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Golfito_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55BB3BF3215483B500E3E9ED /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
+		55C81143215308E800531B28 /* boot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = boot.h; sourceTree = "<group>"; };
+		55C811442153096400531B28 /* boot.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = boot.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		55B70011214F5071006CDB55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55B70038214F58EB006CDB55 /* MetalKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55B7FFDF214F5016006CDB55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55B7003B214F58FF006CDB55 /* MetalKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55B7FFF7214F504F006CDB55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55771C4B215682D100186576 /* MetalKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5568BF59215234F7009033AA /* apple */ = {
+			isa = PBXGroup;
+			children = (
+				55B70051214F5D20006CDB55 /* shaders */,
+				55B70045214F5CFE006CDB55 /* main.m */,
+				55B70042214F5CFE006CDB55 /* AppDelegate.h */,
+				55B70043214F5CFE006CDB55 /* ViewController.m */,
+				55B70046214F5CFE006CDB55 /* AppDelegate.m */,
+				55B70047214F5CFE006CDB55 /* ViewController.h */,
+			);
+			path = apple;
+			sourceTree = "<group>";
+		};
+		55B70015214F5071006CDB55 /* Golfito_TvOS */ = {
+			isa = PBXGroup;
+			children = (
+				55B7001C214F5071006CDB55 /* Main.storyboard */,
+				55B7001F214F5072006CDB55 /* Assets.xcassets */,
+				55B70021214F5072006CDB55 /* Info.plist */,
+			);
+			path = Golfito_TvOS;
+			sourceTree = "<group>";
+		};
+		55B70028214F5088006CDB55 /* Golfito */ = {
+			isa = PBXGroup;
+			children = (
+				55C8114821530CAA00531B28 /* assets */,
+				55B70041214F5CFE006CDB55 /* src */,
+			);
+			name = Golfito;
+			sourceTree = "<group>";
+		};
+		55B70041214F5CFE006CDB55 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				55C81142215308C300531B28 /* game */,
+				5568BF59215234F7009033AA /* apple */,
+				55B70058214FD991006CDB55 /* core */,
+			);
+			name = src;
+			path = Golfito/src;
+			sourceTree = "<group>";
+		};
+		55B70051214F5D20006CDB55 /* shaders */ = {
+			isa = PBXGroup;
+			children = (
+				55B70052214F5D38006CDB55 /* BaseShader.metal */,
+			);
+			path = shaders;
+			sourceTree = "<group>";
+		};
+		55B70058214FD991006CDB55 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				55B70044214F5CFE006CDB55 /* stb_image.h */,
+				55B70059214FD9C7006CDB55 /* input.h */,
+				55B7005D214FD9F5006CDB55 /* input_iOS.c */,
+				55B70061214FDA26006CDB55 /* types.h */,
+				55B70062214FE334006CDB55 /* math.h */,
+				5568BF5221505E64009033AA /* gfx.h */,
+				5568BF5321505F13009033AA /* gfx_Metal.m */,
+				5568BF5721506F76009033AA /* input_MacOS.c */,
+				55491E6F215453B6009C15C1 /* input_TvOS.c */,
+				5526F01A21567D8B00F88049 /* assert.h */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		55B7FFB9214F4F61006CDB55 = {
+			isa = PBXGroup;
+			children = (
+				55FCEE912156812B0056E41B /* ProjectData */,
+				55B70028214F5088006CDB55 /* Golfito */,
+				55B7FFC5214F4F81006CDB55 /* Products */,
+				55B7FFDB214F4FD3006CDB55 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		55B7FFC5214F4F81006CDB55 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55B7FFE2214F5016006CDB55 /* Golfito_MacOS.app */,
+				55B7FFFA214F504F006CDB55 /* Golfito_iOS.app */,
+				55B70014214F5071006CDB55 /* Golfito_TvOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		55B7FFDB214F4FD3006CDB55 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55771C49215682BD00186576 /* MetalKit.framework */,
+				55B7003A214F58FF006CDB55 /* MetalKit.framework */,
+				55B70037214F58EB006CDB55 /* MetalKit.framework */,
+				55B7FFDC214F4FD3006CDB55 /* MetalKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		55B7FFE3214F5016006CDB55 /* Golfito_MacOS */ = {
+			isa = PBXGroup;
+			children = (
+				55B7FFEA214F5017006CDB55 /* Assets.xcassets */,
+				55B7FFEC214F5017006CDB55 /* Main.storyboard */,
+				55B7FFEF214F5017006CDB55 /* Info.plist */,
+				55B7FFF2214F5017006CDB55 /* Golfito_MacOS.entitlements */,
+			);
+			path = Golfito_MacOS;
+			sourceTree = "<group>";
+		};
+		55B7FFFB214F504F006CDB55 /* Golfito_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				55B70002214F504F006CDB55 /* Main.storyboard */,
+				55B70005214F504F006CDB55 /* Assets.xcassets */,
+				55B70007214F504F006CDB55 /* LaunchScreen.storyboard */,
+				55B7000A214F504F006CDB55 /* Info.plist */,
+			);
+			path = Golfito_iOS;
+			sourceTree = "<group>";
+		};
+		55C81142215308C300531B28 /* game */ = {
+			isa = PBXGroup;
+			children = (
+				55C81143215308E800531B28 /* boot.h */,
+				55C811442153096400531B28 /* boot.c */,
+			);
+			path = game;
+			sourceTree = "<group>";
+		};
+		55C8114821530CAA00531B28 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				55BB3BF3215483B500E3E9ED /* image.png */,
+				557737A8215441BD00240D78 /* sheet.png */,
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
+		55FCEE912156812B0056E41B /* ProjectData */ = {
+			isa = PBXGroup;
+			children = (
+				55B7FFE3214F5016006CDB55 /* Golfito_MacOS */,
+				55B7FFFB214F504F006CDB55 /* Golfito_iOS */,
+				55B70015214F5071006CDB55 /* Golfito_TvOS */,
+			);
+			path = ProjectData;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		55B70013214F5071006CDB55 /* Golfito_TvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55B70024214F5072006CDB55 /* Build configuration list for PBXNativeTarget "Golfito_TvOS" */;
+			buildPhases = (
+				55B70010214F5071006CDB55 /* Sources */,
+				55B70011214F5071006CDB55 /* Frameworks */,
+				55B70012214F5071006CDB55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Golfito_TvOS;
+			productName = Golfito_TvOS;
+			productReference = 55B70014214F5071006CDB55 /* Golfito_TvOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		55B7FFE1214F5016006CDB55 /* Golfito_MacOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55B7FFF3214F5017006CDB55 /* Build configuration list for PBXNativeTarget "Golfito_MacOS" */;
+			buildPhases = (
+				55B7FFDE214F5016006CDB55 /* Sources */,
+				55B7FFDF214F5016006CDB55 /* Frameworks */,
+				55B7FFE0214F5016006CDB55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Golfito_MacOS;
+			productName = Golfito_MacOS;
+			productReference = 55B7FFE2214F5016006CDB55 /* Golfito_MacOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		55B7FFF9214F504F006CDB55 /* Golfito_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55B7000D214F504F006CDB55 /* Build configuration list for PBXNativeTarget "Golfito_iOS" */;
+			buildPhases = (
+				55B7FFF6214F504F006CDB55 /* Sources */,
+				55B7FFF7214F504F006CDB55 /* Frameworks */,
+				55B7FFF8214F504F006CDB55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Golfito_iOS;
+			productName = Golfito_iOS;
+			productReference = 55B7FFFA214F504F006CDB55 /* Golfito_iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		55B7FFBA214F4F61006CDB55 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1000;
+				TargetAttributes = {
+					55B70013214F5071006CDB55 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					55B7FFE1214F5016006CDB55 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					55B7FFF9214F504F006CDB55 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 55B7FFBD214F4F61006CDB55 /* Build configuration list for PBXProject "Golfito" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 55B7FFB9214F4F61006CDB55;
+			productRefGroup = 55B7FFC5214F4F81006CDB55 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				55B7FFE1214F5016006CDB55 /* Golfito_MacOS */,
+				55B7FFF9214F504F006CDB55 /* Golfito_iOS */,
+				55B70013214F5071006CDB55 /* Golfito_TvOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		55B70012214F5071006CDB55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55B70020214F5072006CDB55 /* Assets.xcassets in Resources */,
+				557737AB215441BD00240D78 /* sheet.png in Resources */,
+				55B7001E214F5071006CDB55 /* Main.storyboard in Resources */,
+				55BB3BF6215483B500E3E9ED /* image.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55B7FFE0214F5016006CDB55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55B7FFEB214F5017006CDB55 /* Assets.xcassets in Resources */,
+				557737A9215441BD00240D78 /* sheet.png in Resources */,
+				55B7FFEE214F5017006CDB55 /* Main.storyboard in Resources */,
+				55BB3BF4215483B500E3E9ED /* image.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55B7FFF8214F504F006CDB55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55B70009214F504F006CDB55 /* LaunchScreen.storyboard in Resources */,
+				557737AA215441BD00240D78 /* sheet.png in Resources */,
+				55B70006214F504F006CDB55 /* Assets.xcassets in Resources */,
+				55B70004214F504F006CDB55 /* Main.storyboard in Resources */,
+				55BB3BF5215483B500E3E9ED /* image.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		55B70010214F5071006CDB55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55B7004D214F5CFE006CDB55 /* main.m in Sources */,
+				55B7004A214F5CFE006CDB55 /* ViewController.m in Sources */,
+				5568BF5621505F13009033AA /* gfx_Metal.m in Sources */,
+				55C811472153096400531B28 /* boot.c in Sources */,
+				55B7005C214FD9C7006CDB55 /* input.h in Sources */,
+				55B70050214F5CFE006CDB55 /* AppDelegate.m in Sources */,
+				55491E70215453B6009C15C1 /* input_TvOS.c in Sources */,
+				55B70060214FD9F5006CDB55 /* input_iOS.c in Sources */,
+				55B70055214F5D38006CDB55 /* BaseShader.metal in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55B7FFDE214F5016006CDB55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5568BF5821506F76009033AA /* input_MacOS.c in Sources */,
+				55B7004B214F5CFE006CDB55 /* main.m in Sources */,
+				55B70048214F5CFE006CDB55 /* ViewController.m in Sources */,
+				55C811452153096400531B28 /* boot.c in Sources */,
+				5568BF5421505F13009033AA /* gfx_Metal.m in Sources */,
+				55B7005A214FD9C7006CDB55 /* input.h in Sources */,
+				55B7004E214F5CFE006CDB55 /* AppDelegate.m in Sources */,
+				55B70053214F5D38006CDB55 /* BaseShader.metal in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55B7FFF6214F504F006CDB55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55B7004C214F5CFE006CDB55 /* main.m in Sources */,
+				55B70049214F5CFE006CDB55 /* ViewController.m in Sources */,
+				5568BF5521505F13009033AA /* gfx_Metal.m in Sources */,
+				55C811462153096400531B28 /* boot.c in Sources */,
+				55B7005B214FD9C7006CDB55 /* input.h in Sources */,
+				55B7004F214F5CFE006CDB55 /* AppDelegate.m in Sources */,
+				55B7005F214FD9F5006CDB55 /* input_iOS.c in Sources */,
+				55B70054214F5D38006CDB55 /* BaseShader.metal in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		55B70002214F504F006CDB55 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55B70003214F504F006CDB55 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		55B70007214F504F006CDB55 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55B70008214F504F006CDB55 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		55B7001C214F5071006CDB55 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55B7001D214F5071006CDB55 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		55B7FFEC214F5017006CDB55 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55B7FFED214F5017006CDB55 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		55B7000E214F504F006CDB55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = WFQZCMUHBK;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = _DEBUG;
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = TARGET_IOS;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/ProjectData/Golfito_iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_FAST_MATH = YES;
+				MTL_OPTIMIZATION_LEVEL = 3;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "felipe.Golfito-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		55B7000F214F504F006CDB55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = WFQZCMUHBK;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = TARGET_IOS;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/ProjectData/Golfito_iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				MTL_OPTIMIZATION_LEVEL = 3;
+				PRODUCT_BUNDLE_IDENTIFIER = "felipe.Golfito-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		55B70025214F5072006CDB55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = WFQZCMUHBK;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = _DEBUG;
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = TARGET_TVOS;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/ProjectData/Golfito_TvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "felipe.Golfito-TvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.4;
+			};
+			name = Debug;
+		};
+		55B70026214F5072006CDB55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = WFQZCMUHBK;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = TARGET_TVOS;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/ProjectData/Golfito_TvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "felipe.Golfito-TvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.4;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		55B7FFBE214F4F61006CDB55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+			};
+			name = Debug;
+		};
+		55B7FFBF214F4F61006CDB55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+			};
+			name = Release;
+		};
+		55B7FFF4214F5017006CDB55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/ProjectData/Golfito_MacOS/Golfito_MacOS.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = WFQZCMUHBK;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "_DEBUG=1";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = TARGET_MACOS;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/ProjectData/Golfito_MacOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "felipe.Golfito-MacOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		55B7FFF5214F5017006CDB55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/ProjectData/Golfito_MacOS/Golfito_MacOS.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = WFQZCMUHBK;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = TARGET_MACOS;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/ProjectData/Golfito_MacOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "felipe.Golfito-MacOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		55B7000D214F504F006CDB55 /* Build configuration list for PBXNativeTarget "Golfito_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55B7000E214F504F006CDB55 /* Debug */,
+				55B7000F214F504F006CDB55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55B70024214F5072006CDB55 /* Build configuration list for PBXNativeTarget "Golfito_TvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55B70025214F5072006CDB55 /* Debug */,
+				55B70026214F5072006CDB55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55B7FFBD214F4F61006CDB55 /* Build configuration list for PBXProject "Golfito" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55B7FFBE214F4F61006CDB55 /* Debug */,
+				55B7FFBF214F4F61006CDB55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55B7FFF3214F5017006CDB55 /* Build configuration list for PBXNativeTarget "Golfito_MacOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55B7FFF4214F5017006CDB55 /* Debug */,
+				55B7FFF5214F5017006CDB55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 55B7FFBA214F4F61006CDB55 /* Project object */;
+}
