@@ -10,7 +10,7 @@
 #define _BREAKPOINT() asm("ud2a\n")
 #elif defined(TARGET_IOS) || defined(TARGET_TVOS)
 #define _BREAKPOINT() raise(SIGTRAP)
-#elif
+#else
 #define _BREAKPOINT __debugbreak
 #endif
 

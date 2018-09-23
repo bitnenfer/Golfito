@@ -31,10 +31,17 @@ float32_t crappy_random () {
 }
 
 void game_start (void) {
-    sampleTexture = gfx_load_texture("sheet.png");
+#if defined(_WIN32)
+    sampleTexture = gfx_load_texture("../assets/sheet.png");
     assert(sampleTexture != INVALID_TEXTURE_ID);
-    otherTexture = gfx_load_texture("image.png");
+    otherTexture = gfx_load_texture("../assets/image.png");
     assert(sampleTexture != INVALID_TEXTURE_ID);
+#else
+	sampleTexture = gfx_load_texture("sheet.png");
+	assert(sampleTexture != INVALID_TEXTURE_ID);
+	otherTexture = gfx_load_texture("image.png");
+	assert(sampleTexture != INVALID_TEXTURE_ID);
+#endif
     textureSize = gfx_get_texture_size(sampleTexture);
     srand((uint32_t)time(NULL));
     vec2_t size = gfx_get_view_size();
@@ -53,7 +60,7 @@ void game_loop (float32_t dt) {
     
     gfx_set_pipeline(PIPELINE_TEXTURE);
     
-    gfx_draw_texture(otherTexture, 0, 0);
+    //gfx_draw_texture(otherTexture, 0, 0);
     
     for (uint32_t index = 0; index < count; ++index) {
         Sprite* pSprite = &sprites[index];
@@ -67,9 +74,9 @@ void game_loop (float32_t dt) {
         pSprite->scaleRotation.y += pSprite->rotSpeed;
     }
     
-    gfx_draw_texture_with_color(otherTexture, 200, 200, GET_COLOR_RGB_U32(0xff, 0, 0));
+    //gfx_draw_texture_with_color(otherTexture, 200, 200, GET_COLOR_RGB_U32(0xff, 0, 0));
     
-//    gfx_set_pipeline(PIPELINE_LINE);
+    gfx_set_pipeline(PIPELINE_LINE);
     for (uint32_t index = 0; index < count; ++index) {
         Sprite* pSprite = &sprites[index];
         Frame frame = frames[pSprite->frame];

@@ -1,5 +1,7 @@
+#if defined(__APPLE__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wcomma"
+#endif
 /* stb_image - v2.19 - public domain image loader - http://nothings.org/stb
  no warranty implied; use at your own risk
  
@@ -7462,4 +7464,6 @@ STBIDEF int stbi_is_16_bit_from_callbacks(stbi_io_callbacks const *c, void *user
  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  ------------------------------------------------------------------------------
  */
+#if defined(__APPLE__)
 #pragma GCC diagnostic pop
+#endif

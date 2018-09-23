@@ -1,0 +1,5 @@
+Golfito/build
+*.opendb
+*.vs
+*.filters
+*.user

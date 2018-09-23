@@ -15,6 +15,7 @@ typedef int32_t TextureID;
 #define PIPELINE_LINE 1
 
 void gfx_initialize (void);
+void gfx_shutdown(void);
 void gfx_begin (void);
 void gfx_end (void);
 void gfx_flush (void);

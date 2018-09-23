@@ -1,9 +1,11 @@
 #ifndef _MATH_H_
 #define _MATH_H_
 
+#if defined __APPLE__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-function"
 #pragma clang diagnostic ignored "-Wunused-variable"
+#endif 
 
 #include <math.h>
 
@@ -928,7 +930,9 @@ float quatGetAxisAngle(struct vec3* __restrict pOutAxis, struct quat* __restrict
     }
     return radian;
 }
+#if defined(__APPLE__)
 #pragma clang diagnostic pop
+#endif
 
 #endif // !_MATH_H_
 

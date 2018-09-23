@@ -112,6 +112,9 @@ void gfx_initialize (void) {
     _gfxState.pipelineID = (uint32_t)-1;
     gfx_set_pipeline(PIPELINE_TEXTURE);
 }
+void gfx_shutdown(void) {
+
+}
 void gfx_begin (void) {
     MTLRenderPassDescriptor* pCurrentRenderPassDesc = _gfxState.metalKitView.currentRenderPassDescriptor;
     pCurrentRenderPassDesc.colorAttachments[0].clearColor = _gfxState.clearColor;
