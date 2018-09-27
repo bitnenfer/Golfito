@@ -9,6 +9,7 @@
 #if defined(TARGET_MACOS)
 #define _BREAKPOINT() asm("ud2a\n")
 #elif defined(TARGET_IOS) || defined(TARGET_TVOS)
+#include <signal.h>
 #define _BREAKPOINT() raise(SIGTRAP)
 #else
 #define _BREAKPOINT __debugbreak

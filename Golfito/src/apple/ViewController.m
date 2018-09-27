@@ -2,6 +2,7 @@
 #include "../core/math.h"
 #include "../core/gfx.h"
 #include "../core/input.h"
+#include "../core/memory.h"
 #include "../game/boot.h"
 
 #if defined(TARGET_MACOS)
@@ -32,6 +33,7 @@ extern void _gfx_init_state (MTKView* pView, float32_t width, float32_t height);
     _view = view;
     _viewportSize.x = _view.frame.size.width;
     _viewportSize.y = _view.frame.size.height;
+    mem_initialize();
     _gfx_init_state(view, _viewportSize.x, _viewportSize.y);
     gfx_initialize();
     game_start();

@@ -18,22 +18,22 @@ typedef struct {
     TouchInputTvOS touch[MAX_TOUCHES];
 } InputTvOS;
 
-static InputTvOS _inputState = { 0 };
+static InputTvOS gInputState = { 0 };
 
 bool32_t input_initialize () {
-    memset((void*)&_inputState, 0, sizeof(_inputState));
+    memset((void*)&gInputState, 0, sizeof(gInputState));
     return GF_TRUE;
 }
 
 bool32_t input_pointer_down (uint32_t pointerID) {
     if (pointerID >= MAX_TOUCHES) return GF_FALSE;
-    return GF_IS_TRUE(_inputState.touch[0].state, INPUT_DOWN);
+    return GF_IS_TRUE(gInputState.touch[0].state, INPUT_DOWN);
 }
 
 bool32_t input_pointer_hit (uint32_t pointerID) {
     if (pointerID >= MAX_TOUCHES) return GF_FALSE;
-    if (GF_IS_TRUE(_inputState.touch[0].state, INPUT_HIT)) {
-        GF_SET_FALSE(_inputState.touch[0].state, INPUT_HIT);
+    if (GF_IS_TRUE(gInputState.touch[0].state, INPUT_HIT)) {
+        GF_SET_FALSE(gInputState.touch[0].state, INPUT_HIT);
         return GF_TRUE;
     }
     return GF_FALSE;
@@ -41,12 +41,12 @@ bool32_t input_pointer_hit (uint32_t pointerID) {
 
 bool32_t input_pointer_move (uint32_t pointerID) {
     if (pointerID >= MAX_TOUCHES) return GF_FALSE;
-    return GF_IS_TRUE(_inputState.touch[0].state, INPUT_MOVE);
+    return GF_IS_TRUE(gInputState.touch[0].state, INPUT_MOVE);
 }
 
 bool32_t input_pointer_up(uint32_t pointerID) {
     if (pointerID >= MAX_TOUCHES) return GF_FALSE;
-    TouchInputTvOS* pState = &_inputState.touch[0];
+    TouchInputTvOS* pState = &gInputState.touch[0];
     if (GF_IS_TRUE(pState->state, INPUT_UP)) {
         GF_SET_FALSE(pState->state, INPUT_UP);
         return GF_TRUE;
@@ -56,11 +56,11 @@ bool32_t input_pointer_up(uint32_t pointerID) {
 
 vec2_t input_pointer_position (uint32_t pointerID) {
     if (pointerID >= MAX_TOUCHES) { vec2_t pos = { 0.0f, 0.0f }; return pos; }
-    return _inputState.touch[0].position;
+    return gInputState.touch[0].position;
 }
 
 void _input_update_down (uint32_t pointerID, float32_t x, float32_t y) {
-    TouchInputTvOS* pState = &_inputState.touch[0];
+    TouchInputTvOS* pState = &gInputState.touch[0];
     uint32_t state = pState->state;
     pState->position.x = x;
     pState->position.y = y;
@@ -73,7 +73,7 @@ void _input_update_down (uint32_t pointerID, float32_t x, float32_t y) {
 }
 
 void _input_update_up (uint32_t pointerID, float32_t x, float32_t y) {
-    TouchInputTvOS* pState = &_inputState.touch[0];
+    TouchInputTvOS* pState = &gInputState.touch[0];
     uint32_t state = pState->state;
     pState->position.x = x;
     pState->position.y = y;
@@ -84,7 +84,7 @@ void _input_update_up (uint32_t pointerID, float32_t x, float32_t y) {
 }
 
 void _input_update_move (uint32_t pointerID, float32_t x, float32_t y) {
-    TouchInputTvOS* pState = &_inputState.touch[0];
+    TouchInputTvOS* pState = &gInputState.touch[0];
     uint32_t state = pState->state;
     bool32_t isMoving = (pState->position.x != x || pState->position.y != y);
     pState->position.x = x;

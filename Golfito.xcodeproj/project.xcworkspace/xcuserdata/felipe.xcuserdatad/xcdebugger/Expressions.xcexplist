@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "gfx_initialize:gfx_Metal.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "gGfxState.points.pBuffer">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "gfx_render_frame:gfx_Metal.m">
          <PersistentStrings>
             <PersistentString

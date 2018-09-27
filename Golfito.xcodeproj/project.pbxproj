@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		552B1BCF215D1EDA000425D1 /* memory.h in Sources */ = {isa = PBXBuildFile; fileRef = 552B1BCE215D1EDA000425D1 /* memory.h */; };
+		552B1BD0215D1EDA000425D1 /* memory.h in Sources */ = {isa = PBXBuildFile; fileRef = 552B1BCE215D1EDA000425D1 /* memory.h */; };
+		552B1BD1215D1EDA000425D1 /* memory.h in Sources */ = {isa = PBXBuildFile; fileRef = 552B1BCE215D1EDA000425D1 /* memory.h */; };
+		552B1BD3215D209E000425D1 /* memory.c in Sources */ = {isa = PBXBuildFile; fileRef = 552B1BD2215D209E000425D1 /* memory.c */; };
+		552B1BD4215D209E000425D1 /* memory.c in Sources */ = {isa = PBXBuildFile; fileRef = 552B1BD2215D209E000425D1 /* memory.c */; };
+		552B1BD5215D209E000425D1 /* memory.c in Sources */ = {isa = PBXBuildFile; fileRef = 552B1BD2215D209E000425D1 /* memory.c */; };
+		552B1BD8215D6138000425D1 /* page_allocator_Apple.c in Sources */ = {isa = PBXBuildFile; fileRef = 552B1BD7215D6138000425D1 /* page_allocator_Apple.c */; };
+		552B1BD9215D6138000425D1 /* page_allocator_Apple.c in Sources */ = {isa = PBXBuildFile; fileRef = 552B1BD7215D6138000425D1 /* page_allocator_Apple.c */; };
+		552B1BDA215D6138000425D1 /* page_allocator_Apple.c in Sources */ = {isa = PBXBuildFile; fileRef = 552B1BD7215D6138000425D1 /* page_allocator_Apple.c */; };
 		55491E70215453B6009C15C1 /* input_TvOS.c in Sources */ = {isa = PBXBuildFile; fileRef = 55491E6F215453B6009C15C1 /* input_TvOS.c */; };
 		5568BF5421505F13009033AA /* gfx_Metal.m in Sources */ = {isa = PBXBuildFile; fileRef = 5568BF5321505F13009033AA /* gfx_Metal.m */; };
 		5568BF5521505F13009033AA /* gfx_Metal.m in Sources */ = {isa = PBXBuildFile; fileRef = 5568BF5321505F13009033AA /* gfx_Metal.m */; };
@@ -52,6 +61,10 @@
 
 /* Begin PBXFileReference section */
 		5526F01A21567D8B00F88049 /* assert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = assert.h; sourceTree = "<group>"; };
+		552B1BCE215D1EDA000425D1 /* memory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = memory.h; sourceTree = "<group>"; };
+		552B1BD2215D209E000425D1 /* memory.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = memory.c; sourceTree = "<group>"; };
+		552B1BD6215D2D31000425D1 /* utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		552B1BD7215D6138000425D1 /* page_allocator_Apple.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = page_allocator_Apple.c; sourceTree = "<group>"; };
 		55491E6F215453B6009C15C1 /* input_TvOS.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = input_TvOS.c; sourceTree = "<group>"; };
 		5568BF5221505E64009033AA /* gfx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gfx.h; sourceTree = "<group>"; };
 		5568BF5321505F13009033AA /* gfx_Metal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = gfx_Metal.m; sourceTree = "<group>"; };
@@ -183,6 +196,10 @@
 				5568BF5721506F76009033AA /* input_MacOS.c */,
 				55491E6F215453B6009C15C1 /* input_TvOS.c */,
 				5526F01A21567D8B00F88049 /* assert.h */,
+				552B1BCE215D1EDA000425D1 /* memory.h */,
+				552B1BD2215D209E000425D1 /* memory.c */,
+				552B1BD6215D2D31000425D1 /* utils.h */,
+				552B1BD7215D6138000425D1 /* page_allocator_Apple.c */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -406,10 +423,13 @@
 				55B7004D214F5CFE006CDB55 /* main.m in Sources */,
 				55B7004A214F5CFE006CDB55 /* ViewController.m in Sources */,
 				5568BF5621505F13009033AA /* gfx_Metal.m in Sources */,
+				552B1BD1215D1EDA000425D1 /* memory.h in Sources */,
 				55C811472153096400531B28 /* boot.c in Sources */,
+				552B1BDA215D6138000425D1 /* page_allocator_Apple.c in Sources */,
 				55B7005C214FD9C7006CDB55 /* input.h in Sources */,
 				55B70050214F5CFE006CDB55 /* AppDelegate.m in Sources */,
 				55491E70215453B6009C15C1 /* input_TvOS.c in Sources */,
+				552B1BD5215D209E000425D1 /* memory.c in Sources */,
 				55B70060214FD9F5006CDB55 /* input_iOS.c in Sources */,
 				55B70055214F5D38006CDB55 /* BaseShader.metal in Sources */,
 			);
@@ -419,9 +439,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				552B1BCF215D1EDA000425D1 /* memory.h in Sources */,
 				5568BF5821506F76009033AA /* input_MacOS.c in Sources */,
+				552B1BD3215D209E000425D1 /* memory.c in Sources */,
 				55B7004B214F5CFE006CDB55 /* main.m in Sources */,
 				55B70048214F5CFE006CDB55 /* ViewController.m in Sources */,
+				552B1BD8215D6138000425D1 /* page_allocator_Apple.c in Sources */,
 				55C811452153096400531B28 /* boot.c in Sources */,
 				5568BF5421505F13009033AA /* gfx_Metal.m in Sources */,
 				55B7005A214FD9C7006CDB55 /* input.h in Sources */,
@@ -434,9 +457,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				552B1BD0215D1EDA000425D1 /* memory.h in Sources */,
 				55B7004C214F5CFE006CDB55 /* main.m in Sources */,
+				552B1BD4215D209E000425D1 /* memory.c in Sources */,
 				55B70049214F5CFE006CDB55 /* ViewController.m in Sources */,
 				5568BF5521505F13009033AA /* gfx_Metal.m in Sources */,
+				552B1BD9215D6138000425D1 /* page_allocator_Apple.c in Sources */,
 				55C811462153096400531B28 /* boot.c in Sources */,
 				55B7005B214FD9C7006CDB55 /* input.h in Sources */,
 				55B7004F214F5CFE006CDB55 /* AppDelegate.m in Sources */,

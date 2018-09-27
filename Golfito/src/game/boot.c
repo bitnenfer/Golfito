@@ -1,6 +1,7 @@
 #include "boot.h"
 #include "../core/gfx.h"
 #include "../core/input.h"
+#include "../core/memory.h"
 #include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>
