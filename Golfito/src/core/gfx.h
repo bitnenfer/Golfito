@@ -4,12 +4,20 @@
 #include "types.h"
 #include "math.h"
 
-typedef int32_t TextureID;
-#define INVALID_TEXTURE_ID (-1)
+typedef void* TextureID;
+#define INVALID_TEXTURE_ID NULL
 #define GET_COLOR_RGBA_U32(red, green, blue, alpha) ((((red) & 0xFF) << 24) | (((green) & 0xFF) << 16) | (((blue) & 0xFF) << 8)) | (((alpha) & 0xFF))
 #define GET_COLOR_RGB_U32(red, green, blue) GET_COLOR_RGBA_U32(red, green, blue, 0xFF)
 #define GET_COLOR_RGBA_F32(red, green, blue, alpha) GET_COLOR_RGBA_U32((uint8_t)((red) * 255.0f), (uint8_t)((green) * 255.0f), (uint8_t)((blue) * 255.0f), (uint8_t)((alpha) * 255.0f))
 #define GET_COLOR_RGB_F32(red, green, blue) GET_COLOR_RGBA_F32(red, green, blue, 1.0f)
+
+#define COLOR_WHITE     GET_COLOR_RGBA_U32(0xFF, 0xFF, 0xFF, 0xFF)
+#define COLOR_RED       GET_COLOR_RGBA_U32(0xFF, 0x00, 0x00, 0xFF)
+#define COLOR_GREEN     GET_COLOR_RGBA_U32(0x00, 0xFF, 0x00, 0xFF)
+#define COLOR_BLUE      GET_COLOR_RGBA_U32(0x00, 0x00, 0xFF, 0xFF)
+#define COLOR_YELLOW    GET_COLOR_RGBA_U32(0xFF, 0xFF, 0x00, 0xFF)
+#define COLOR_PINK      GET_COLOR_RGBA_U32(0xFF, 0x00, 0xFF, 0xFF)
+#define COLOR_BLACK     GET_COLOR_RGBA_U32(0x00, 0x00, 0x00, 0xFF)
 
 #define PIPELINE_TEXTURE 0
 #define PIPELINE_LINE 1

@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define MAX_SPRITES 1000
+#define MAX_SPRITES 8000
 typedef struct {
     vec2_t position;
     vec2_t scaleRotation;
@@ -39,8 +39,8 @@ void game_start (void) {
 #else
 	sampleTexture = gfx_load_texture("sheet.png");
 	assert(sampleTexture != INVALID_TEXTURE_ID);
-	otherTexture = gfx_load_texture("image.png");
-	assert(sampleTexture != INVALID_TEXTURE_ID);
+    otherTexture = gfx_load_texture("image.png");
+    assert(otherTexture != INVALID_TEXTURE_ID);
 #endif
     textureSize = gfx_get_texture_size(sampleTexture);
     srand((uint32_t)time(NULL));
@@ -51,7 +51,7 @@ void game_start (void) {
     sprites[0].scaleRotation.y = crappy_random();
     sprites[0].rotSpeed = crappy_random() * 0.01f;
     sprites[0].frame = currentFrame;
-    sprites[0].color = GET_COLOR_RGB_U32(0xFF, 0xFF, 0xFF);
+    sprites[0].color = COLOR_WHITE;
     currentFrame = 0;
 }
 void game_end (void) {}
@@ -59,8 +59,7 @@ void game_loop (float32_t dt) {
     gfx_set_clear_color(0.0f, 0.0f, 0.0f, 1.0f);
     
     gfx_set_pipeline(PIPELINE_TEXTURE);
-    
-    //gfx_draw_texture(otherTexture, 0, 0);
+    gfx_draw_texture(otherTexture, 0, 0);
     
     for (uint32_t index = 0; index < count; ++index) {
         Sprite* pSprite = &sprites[index];
@@ -74,27 +73,8 @@ void game_loop (float32_t dt) {
         pSprite->scaleRotation.y += pSprite->rotSpeed;
     }
     
-    //gfx_draw_texture_with_color(otherTexture, 200, 200, GET_COLOR_RGB_U32(0xff, 0, 0));
-    
-    gfx_set_pipeline(PIPELINE_LINE);
-    for (uint32_t index = 0; index < count; ++index) {
-        Sprite* pSprite = &sprites[index];
-        Frame frame = frames[pSprite->frame];
-        gfx_push_matrix();
-        gfx_translate(pSprite->position.x, pSprite->position.y);
-        gfx_rotate(pSprite->scaleRotation.y);
-        gfx_scale(pSprite->scaleRotation.x, pSprite->scaleRotation.x);
-        float32_t x0 = -frame.w / 2;
-        float32_t y0 = -frame.h / 2;
-        float32_t x1 = x0 + frame.w;
-        float32_t y1 = y0 + frame.h;
-        gfx_line(x0, y0, x1, y0, GET_COLOR_RGB_U32(0xff, 0, 0));
-        gfx_line(x1, y0, x1, y1, GET_COLOR_RGB_U32(0xff, 0, 0));
-        gfx_line(x1, y1, x0, y1, GET_COLOR_RGB_U32(0xff, 0, 0));
-        gfx_line(x0, y1, x0, y0, GET_COLOR_RGB_U32(0xff, 0, 0));
-        gfx_pop_matrix();
-        pSprite->scaleRotation.y += pSprite->rotSpeed;
-    }
+    gfx_draw_texture_with_color(otherTexture, 200, 200, GET_COLOR_RGB_U32(0xff, 0, 0));
+    gfx_flush();
     
     if (input_pointer_down(0)) {
         vec2_t pos = input_pointer_position(0);
