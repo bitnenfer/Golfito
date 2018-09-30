@@ -31,6 +31,14 @@ float32_t crappy_random () {
     return ((float32_t)rand()) / ((float32_t)RAND_MAX);
 }
 
+void game_sys_initialize(void) {
+    
+}
+
+void game_sys_shutdown(void) {
+    
+}
+
 void game_start (void) {
 #if defined(_WIN32)
     sampleTexture = gfx_load_texture("../assets/sheet.png");
@@ -60,7 +68,7 @@ void game_loop (float32_t dt) {
     gfx_set_clear_color(0.0f, 0.0f, 0.0f, 1.0f);
     
     gfx_set_pipeline(PIPELINE_TEXTURE);
-    gfx_draw_texture(otherTexture, 0, 0);
+//    gfx_draw_texture(otherTexture, 0, 0);
     
     for (uint32_t index = 0; index < count; ++index) {
         Sprite* pSprite = &sprites[index];
@@ -74,10 +82,10 @@ void game_loop (float32_t dt) {
         pSprite->scaleRotation.y += pSprite->rotSpeed;
     }
     
-    gfx_draw_texture_with_color(otherTexture, 200, 200, GET_COLOR_RGB_U32(0xff, 0, 0));
+//    gfx_draw_texture_with_color(otherTexture, 200, 200, GET_COLOR_RGB_U32(0xff, 0, 0));
     gfx_flush();
     
-    if (input_pointer_down(0)) {
+    if (input_pointer_hit(0)) {
         vec2_t pos = input_pointer_position(0);
         if (count < MAX_SPRITES) {
             Sprite sprite;

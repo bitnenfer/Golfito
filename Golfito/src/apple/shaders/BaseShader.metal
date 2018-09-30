@@ -4,11 +4,8 @@
 using namespace metal;
 
 struct VertexUniform {
-//    float4x4 projectionMatrix;
     float2 resolution;
 };
-
-// Texture Tint Pipeline
 
 struct TextureVertexIn {
     float2 position[[attribute(0)]];
@@ -29,7 +26,6 @@ vertex TextureVertexOut textureColorVS (
     
     TextureVertexOut out;
     TextureVertexIn vert = vertices[vertexID];
-//    out.position = uniform.projectionMatrix * float4(vert.position, 0.0, 1.0);
     out.position = float4(((vert.position / uniform.resolution) * 2.0 - 1.0) * float2(1.0, -1.0), 0.0, 1.0);
     out.texCoord = vert.texCoord;
     out.color = float4(vert.color.abgr) / float4(255.0);
@@ -66,8 +62,7 @@ vertex LineVertexOut lineColorVS (
     
     LineVertexOut out;
     LineVertexIn vert = vertices[vertexID];
-//    out.position = uniform.projectionMatrix * float4(vert.position, 0.0, 1.0);
-    out.position = float4(vert.position / uniform.resolution, 0.0, 1.0);
+    out.position = float4(((vert.position / uniform.resolution) * 2.0 - 1.0) * float2(1.0, -1.0), 0.0, 1.0);
     out.color = float4(vert.color.abgr) / float4(255.0);
     
     return out;

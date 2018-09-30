@@ -37,7 +37,6 @@ typedef struct {
 } PointVertex;
 
 typedef struct {
-//    mat4_t projectionMatrix;
     GLKVector2 resolution;
 } BaseShaderUniform;
 
@@ -53,15 +52,13 @@ typedef struct {
 } DrawBatchBuffer;
 
 typedef struct {
-    TextureColorVertex* pBuffer[kMaxFrames];
+    TextureColorVertex* pBuffer;
     uint32_t count;
-    uint32_t idx;
 } TextureColorVertexBuffer;
 
 typedef struct {
-    PointVertex* pBuffer[kMaxFrames];
+    PointVertex* pBuffer;
     uint32_t count;
-    uint32_t idx;
 } PointBuffer;
 
 typedef struct {
@@ -97,15 +94,11 @@ NSBundle* gAssetBundle = NULL;
 
 void gfx_initialize (void) {
     gAssetBundle = [NSBundle mainBundle];
-    for (uint32_t index = 0; index < kMaxFrames; ++index) {
-        gGfxState.points.pBuffer[index] = (PointVertex*)mem_flist_alloc(sizeof(PointVertex) * kMaxPoints, 4);
-        gGfxState.vertices.pBuffer[index] = (TextureColorVertex*)mem_flist_alloc((sizeof(TextureColorVertex) * kMaxVertices), 4);
-    }
+    gGfxState.points.pBuffer =(PointVertex*)mem_freelist_alloc(sizeof(PointVertex) * kMaxPoints, 4);
+    gGfxState.vertices.pBuffer = (TextureColorVertex*)mem_freelist_alloc((sizeof(TextureColorVertex) * kMaxVertices), 4);
     gGfxState.vertices.count = 0;
-    gGfxState.vertices.idx = 0;
     gGfxState.points.count = 0;
-    gGfxState.points.idx = 0;
-    gGfxState.batchBuffer.pBuffer = (DrawBatch*)mem_flist_alloc(sizeof(DrawBatch) * kMaxBatches, 4);
+    gGfxState.batchBuffer.pBuffer = (DrawBatch*)mem_freelist_alloc(sizeof(DrawBatch) * kMaxBatches, 4);
     gGfxState.batchBuffer.count = 0;
     gGfxState.currentTexture = ((void*)0xDEADBEEF);
     gGfxState.pCurrentBatch = NULL;
@@ -147,7 +140,6 @@ void gfx_begin (void) {
     gGfxState.viewportSize.y = mainScreen.frame.size.height;
     gGfxState.pixelScale = mainScreen.backingScaleFactor;
 #endif
-//    mat4Orthographic(&gGfxState.uniformData.projectionMatrix, 0.0f, gGfxState.viewportSize.x, gGfxState.viewportSize.y, 0.0f, -100.0f, 100.0f);
     gGfxState.uniformData.resolution.x = gGfxState.viewportSize.x;
     gGfxState.uniformData.resolution.y = gGfxState.viewportSize.y;
     MTLViewport viewport = { 0.0, 0.0, gGfxState.viewportSize.x * gGfxState.pixelScale, gGfxState.viewportSize.y * gGfxState.pixelScale, -10.0, 10.0 };
@@ -195,7 +187,7 @@ static void _gfx_flush_no_clear (void) {
     if (gGfxState.pipelineID == PIPELINE_TEXTURE) {
         if (count > 0 && gGfxState.vertices.count > 0) {
             size_t size = gGfxState.vertices.count * sizeof(TextureColorVertex);
-            memcpy(gGfxState.vertexBuffer[gGfxState.frameIdx].contents, (void*)gGfxState.vertices.pBuffer[gGfxState.vertices.idx], size);
+            memcpy(gGfxState.vertexBuffer[gGfxState.frameIdx].contents, (void*)gGfxState.vertices.pBuffer, size);
             [renderEncoder setRenderPipelineState:gGfxState.pipelines[PIPELINE_TEXTURE]];
             [renderEncoder setVertexBuffer:gGfxState.vertexBuffer[gGfxState.frameIdx] offset:0 atIndex:0];
             [renderEncoder setVertexBytes:&gGfxState.uniformData length:sizeof(BaseShaderUniform) atIndex:1];
@@ -205,17 +197,15 @@ static void _gfx_flush_no_clear (void) {
                 [renderEncoder setFragmentTexture:mtlTexture atIndex:0];
                 [renderEncoder drawPrimitives:MTLPrimitiveTypeTriangle vertexStart:pBatch->offset vertexCount:pBatch->vertexCount];
             }
-            gGfxState.vertices.idx = (gGfxState.vertices.idx + 1) % kMaxFrames;
         }
     } else if (gGfxState.pipelineID == PIPELINE_LINE) {
         if (gGfxState.points.count > 0) {
             size_t size = gGfxState.points.count * sizeof(PointVertex);
-            memcpy(gGfxState.pointVertexBuffer[gGfxState.frameIdx].contents, (void*)gGfxState.points.pBuffer[gGfxState.points.idx], size);
+            memcpy(gGfxState.pointVertexBuffer[gGfxState.frameIdx].contents, (void*)gGfxState.points.pBuffer, size);
             [renderEncoder setRenderPipelineState:gGfxState.pipelines[PIPELINE_LINE]];
             [renderEncoder setVertexBuffer:gGfxState.pointVertexBuffer[gGfxState.frameIdx] offset:0 atIndex:0];
             [renderEncoder setVertexBytes:&gGfxState.uniformData length:sizeof(BaseShaderUniform) atIndex:1];
             [renderEncoder drawPrimitives:MTLPrimitiveTypeLine vertexStart:0 vertexCount:gGfxState.points.count];
-            gGfxState.points.idx = (gGfxState.points.idx + 1) % kMaxFrames;
         }
     }
 }
@@ -377,7 +367,7 @@ vec2_t gfx_get_texture_size(TextureID texture) {
     return size;
 }
 
-static __attribute__((always_inline)) inline TextureColorVertex _push_vertex (float32_t x, float32_t y, float32_t u ,float32_t v, uint32_t color) {
+static __attribute__((always_inline)) inline TextureColorVertex _transform_vertex (float32_t x, float32_t y, float32_t u ,float32_t v, uint32_t color) {
     vec2_t output = { 0.0f, 0.0f };
     vec2_t input = { x, y };
     mat2DVec2Mul(&output, &gGfxState.matrixStack.matrix, &input);
@@ -387,11 +377,11 @@ static __attribute__((always_inline)) inline TextureColorVertex _push_vertex (fl
 
 static __attribute__((always_inline)) inline void _push_quad(float32_t x, float32_t y, float32_t w, float32_t h, float32_t u0, float32_t v0, float32_t u1, float32_t v1, uint32_t color) {
     if (gGfxState.vertices.count >= kMaxVertices) return;
-    TextureColorVertex vert0 = _push_vertex(x, y, u0, v0, color);
-    TextureColorVertex vert1 = _push_vertex(x, y + h, u0, v1, color);
-    TextureColorVertex vert2 = _push_vertex(x + w, y + h, u1, v1, color);
-    TextureColorVertex vert3 = _push_vertex(x + w, y, u1, v0, color);
-    TextureColorVertex* pVertices = &gGfxState.vertices.pBuffer[gGfxState.vertices.idx][gGfxState.vertices.count];
+    TextureColorVertex vert0 = _transform_vertex(x, y, u0, v0, color);
+    TextureColorVertex vert1 = _transform_vertex(x, y + h, u0, v1, color);
+    TextureColorVertex vert2 = _transform_vertex(x + w, y + h, u1, v1, color);
+    TextureColorVertex vert3 = _transform_vertex(x + w, y, u1, v0, color);
+    TextureColorVertex* pVertices = &gGfxState.vertices.pBuffer[gGfxState.vertices.count];
     pVertices[0] = vert0;
     pVertices[1] = vert1;
     pVertices[2] = vert2;
@@ -483,7 +473,7 @@ void gfx_vertex2(float32_t x, float32_t y, uint32_t color) {
     vec2_t input = { x, y };
     mat2DVec2Mul(&output, &gGfxState.matrixStack.matrix, &input);
     PointVertex vertex = { { output.x, output.y }, color };
-    gGfxState.points.pBuffer[gGfxState.points.idx][gGfxState.points.count++] = vertex;
+    gGfxState.points.pBuffer[gGfxState.points.count++] = vertex;
 }
 void gfx_line2(float32_t x0, float32_t y0, float32_t x1, float32_t y1, uint32_t color0, uint32_t color1) {
     gfx_vertex2(x0, y0, color0);

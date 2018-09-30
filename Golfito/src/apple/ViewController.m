@@ -11,13 +11,6 @@ extern void _input_update_up (uint32_t pointerID, float32_t x, float32_t y);
 extern void _input_update_move (uint32_t pointerID, float32_t x, float32_t y);
 #endif
 
-#if defined(TARGET_TVOS)
-#import <GameController/GameController.h>
-
-
-
-#endif
-
 extern void _gfx_init_state (MTKView* pView, float32_t width, float32_t height);
 
 @interface MetalViewDelegate : NSObject<MTKViewDelegate>
