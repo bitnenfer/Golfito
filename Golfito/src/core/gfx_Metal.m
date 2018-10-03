@@ -47,16 +47,19 @@ typedef struct {
 } DrawBatch;
 
 typedef struct {
+    PageAllocation pageAlloc;
     DrawBatch* pBuffer;
     uint32_t count;
 } DrawBatchBuffer;
 
 typedef struct {
+    PageAllocation pageAlloc;
     TextureColorVertex* pBuffer;
     uint32_t count;
 } TextureColorVertexBuffer;
 
 typedef struct {
+    PageAllocation pageAlloc;
     PointVertex* pBuffer;
     uint32_t count;
 } PointBuffer;
@@ -94,11 +97,16 @@ NSBundle* gAssetBundle = NULL;
 
 void gfx_initialize (void) {
     gAssetBundle = [NSBundle mainBundle];
-    gGfxState.points.pBuffer =(PointVertex*)mem_freelist_alloc(sizeof(PointVertex) * kMaxPoints, 4);
-    gGfxState.vertices.pBuffer = (TextureColorVertex*)mem_freelist_alloc((sizeof(TextureColorVertex) * kMaxVertices), 4);
+    
+    DBG_ASSERT(mem_page_alloc(sizeof(PointVertex) * kMaxPoints, &gGfxState.points.pageAlloc), "Failed to allocate buffer for points");
+    DBG_ASSERT(mem_page_alloc(sizeof(TextureColorVertex) * kMaxVertices, &gGfxState.vertices.pageAlloc), "Failed to allocate buffer for vertices");
+    DBG_ASSERT(mem_page_alloc(sizeof(DrawBatch) * kMaxBatches, &gGfxState.batchBuffer.pageAlloc), "Failed to allocate buffer for draw batching");
+    
+    gGfxState.points.pBuffer = (PointVertex*)gGfxState.points.pageAlloc.pAddress;
+    gGfxState.vertices.pBuffer = (TextureColorVertex*)gGfxState.vertices.pageAlloc.pAddress;
+    gGfxState.batchBuffer.pBuffer = (DrawBatch*)gGfxState.batchBuffer.pageAlloc.pAddress;
     gGfxState.vertices.count = 0;
     gGfxState.points.count = 0;
-    gGfxState.batchBuffer.pBuffer = (DrawBatch*)mem_freelist_alloc(sizeof(DrawBatch) * kMaxBatches, 4);
     gGfxState.batchBuffer.count = 0;
     gGfxState.currentTexture = ((void*)0xDEADBEEF);
     gGfxState.pCurrentBatch = NULL;
@@ -187,7 +195,8 @@ static void _gfx_flush_no_clear (void) {
     if (gGfxState.pipelineID == PIPELINE_TEXTURE) {
         if (count > 0 && gGfxState.vertices.count > 0) {
             size_t size = gGfxState.vertices.count * sizeof(TextureColorVertex);
-            memcpy(gGfxState.vertexBuffer[gGfxState.frameIdx].contents, (void*)gGfxState.vertices.pBuffer, size);
+            void* pVBuffer = gGfxState.vertexBuffer[gGfxState.frameIdx].contents;
+            memcpy(pVBuffer, (void*)gGfxState.vertices.pBuffer, size);
             [renderEncoder setRenderPipelineState:gGfxState.pipelines[PIPELINE_TEXTURE]];
             [renderEncoder setVertexBuffer:gGfxState.vertexBuffer[gGfxState.frameIdx] offset:0 atIndex:0];
             [renderEncoder setVertexBytes:&gGfxState.uniformData length:sizeof(BaseShaderUniform) atIndex:1];
