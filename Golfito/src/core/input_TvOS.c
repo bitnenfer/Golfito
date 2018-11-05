@@ -1,5 +1,6 @@
 #if defined(TARGET_TVOS)
 #include "input.h"
+#include "utils.h"
 #include <string.h>
 #include <stdio.h>
 
@@ -22,36 +23,36 @@ static InputTvOS gInputState = { 0 };
 
 bool32_t input_initialize () {
     memset((void*)&gInputState, 0, sizeof(gInputState));
-    return GF_TRUE;
+    return UT_TRUE;
 }
 
 bool32_t input_pointer_down (uint32_t pointerID) {
-    if (pointerID >= MAX_TOUCHES) return GF_FALSE;
-    return GF_IS_TRUE(gInputState.touch[0].state, INPUT_DOWN);
+    if (pointerID >= MAX_TOUCHES) return UT_FALSE;
+    return UT_IS_TRUE(gInputState.touch[0].state, INPUT_DOWN);
 }
 
 bool32_t input_pointer_hit (uint32_t pointerID) {
-    if (pointerID >= MAX_TOUCHES) return GF_FALSE;
-    if (GF_IS_TRUE(gInputState.touch[0].state, INPUT_HIT)) {
-        GF_SET_FALSE(gInputState.touch[0].state, INPUT_HIT);
-        return GF_TRUE;
+    if (pointerID >= MAX_TOUCHES) return UT_FALSE;
+    if (UT_IS_TRUE(gInputState.touch[0].state, INPUT_HIT)) {
+        UT_SET_FALSE(gInputState.touch[0].state, INPUT_HIT);
+        return UT_TRUE;
     }
-    return GF_FALSE;
+    return UT_FALSE;
 }
 
 bool32_t input_pointer_move (uint32_t pointerID) {
-    if (pointerID >= MAX_TOUCHES) return GF_FALSE;
-    return GF_IS_TRUE(gInputState.touch[0].state, INPUT_MOVE);
+    if (pointerID >= MAX_TOUCHES) return UT_FALSE;
+    return UT_IS_TRUE(gInputState.touch[0].state, INPUT_MOVE);
 }
 
 bool32_t input_pointer_up(uint32_t pointerID) {
-    if (pointerID >= MAX_TOUCHES) return GF_FALSE;
+    if (pointerID >= MAX_TOUCHES) return UT_FALSE;
     TouchInputTvOS* pState = &gInputState.touch[0];
-    if (GF_IS_TRUE(pState->state, INPUT_UP)) {
-        GF_SET_FALSE(pState->state, INPUT_UP);
-        return GF_TRUE;
+    if (UT_IS_TRUE(pState->state, INPUT_UP)) {
+        UT_SET_FALSE(pState->state, INPUT_UP);
+        return UT_TRUE;
     }
-    return GF_FALSE;
+    return UT_FALSE;
 }
 
 vec2_t input_pointer_position (uint32_t pointerID) {
@@ -64,11 +65,11 @@ void _input_update_down (uint32_t pointerID, float32_t x, float32_t y) {
     uint32_t state = pState->state;
     pState->position.x = x;
     pState->position.y = y;
-    if (GF_IS_FALSE(state, INPUT_DOWN)) {
-        GF_SET_TRUE(state, INPUT_HIT);
+    if (UT_IS_FALSE(state, INPUT_DOWN)) {
+        UT_SET_TRUE(state, INPUT_HIT);
     }
-    GF_SET_TRUE(state, INPUT_DOWN);
-    GF_SET_FALSE(state, INPUT_UP);
+    UT_SET_TRUE(state, INPUT_DOWN);
+    UT_SET_FALSE(state, INPUT_UP);
     pState->state = state;
 }
 
@@ -77,9 +78,9 @@ void _input_update_up (uint32_t pointerID, float32_t x, float32_t y) {
     uint32_t state = pState->state;
     pState->position.x = x;
     pState->position.y = y;
-    GF_SET_TRUE(state, INPUT_UP);
-    GF_SET_FALSE(state, INPUT_DOWN);
-    GF_SET_FALSE(state, INPUT_HIT);
+    UT_SET_TRUE(state, INPUT_UP);
+    UT_SET_FALSE(state, INPUT_DOWN);
+    UT_SET_FALSE(state, INPUT_HIT);
     pState->state = state;
 }
 
@@ -89,8 +90,8 @@ void _input_update_move (uint32_t pointerID, float32_t x, float32_t y) {
     bool32_t isMoving = (pState->position.x != x || pState->position.y != y);
     pState->position.x = x;
     pState->position.y = y;
-    if (isMoving) GF_SET_TRUE(state, INPUT_MOVE);
-    else GF_SET_FALSE(state, INPUT_MOVE);
+    if (isMoving) UT_SET_TRUE(state, INPUT_MOVE);
+    else UT_SET_FALSE(state, INPUT_MOVE);
     pState->state = state;
 }
 #endif
